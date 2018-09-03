@@ -12,6 +12,7 @@ ng add @angular/elements
 ng generate component framework-vote
 
 npm install --save bootstrap
+npm install fs-extra concat
 npm install --save-dev http-server
 npm run build && npm run package
 npm run serve
