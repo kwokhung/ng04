@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
 
 import { AppComponent } from './app.component';
 import { FrameworkVoteComponent } from './framework-vote/framework-vote.component';
@@ -12,7 +13,17 @@ import { FrameworkVoteComponent } from './framework-vote/framework-vote.componen
   imports: [
     BrowserModule
   ],
+  entryComponents: [
+    FrameworkVoteComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector: Injector) {
+  }
+  ngDoBootstrap() {
+    const el = createCustomElement(FrameworkVoteComponent, { injector: this.injector });
+    customElements.define('framework-vote', el);
+  }
+}
