@@ -8,6 +8,7 @@ const concat = require('concat');
         './dist/ng04/main.js',
     ]
     await fs.ensureDir('./dist/ng04-element')
+    await fs.emptyDir('./dist/ng04-element')
     await fs.copy('./dist/ng04/assets/', './dist/ng04-element/assets/')
     await fs.copyFile('./dist/ng04/index.html', './dist/ng04-element/index.html')
     await fs.copyFile('./dist/ng04/favicon.ico', './dist/ng04-element/favicon.ico')
