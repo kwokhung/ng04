@@ -9,6 +9,6 @@ const concat = require('concat');
     ]
     await fs.ensureDir('elements')
     await concat(files, 'elements/framework-vote.js');
-    await fs.copyFile('./dist/ng04/styles.css', 'elements/styles.css')
-    await fs.copy('./dist/ng04/assets/', 'elements/assets/')
+    //await fs.copyFile('./dist/ng04/styles.css', 'elements/styles.css')
+    //await fs.copy('./dist/ng04/assets/', 'elements/assets/')
 })()

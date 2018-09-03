@@ -1,21 +1,12 @@
 npm install -g @angular/cli
 
 ng new ng04
-ng serve
-ng serve --port=4201
-ng build
-ng build --prod
-ng test
-ng e2e
-ng help
 ng add @angular/elements
 ng generate component framework-vote
 
 npm install --save bootstrap
 npm install --save-dev fs-extra concat
-npm install --save-dev http-server
-npm run build && npm run package
-npm run serve
+npm run build:elements
 
 1. Init Repo (VSCode)
 
@@ -29,10 +20,3 @@ npm run serve
 
 5. Push Origin Master
 -> git push -u origin master
-
-npm install --save @types/facebook-js-sdk
-npm install --save @capacitor/core @capacitor/cli
-npx cap init
-npx cap init ng04 com.mblinus.test
-npx cap add android
-npx cap open android

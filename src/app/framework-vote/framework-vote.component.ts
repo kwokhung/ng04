@@ -3,8 +3,7 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } fro
 @Component({
   selector: 'app-framework-vote',
   templateUrl: './framework-vote.component.html',
-  styleUrls: ['./framework-vote.component.css'],
-  encapsulation: ViewEncapsulation.Native
+  styleUrls: ['./framework-vote.component.css']
 })
 export class FrameworkVoteComponent implements OnInit {
 
