@@ -13,14 +13,15 @@ import { FrameworkVoteComponent } from './framework-vote/framework-vote.componen
   ],
   entryComponents: [
     FrameworkVoteComponent
-  ],
-  providers: []
+  ]
 })
 export class AppModule {
+
   constructor(private injector: Injector) {
   }
+
   ngDoBootstrap() {
-    const el = createCustomElement(FrameworkVoteComponent, { injector: this.injector });
-    customElements.define('framework-vote', el);
+    customElements.define('framework-vote', createCustomElement(FrameworkVoteComponent, { injector: this.injector }));
   }
+  
 }
