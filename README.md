@@ -6,7 +6,7 @@ ng generate component framework-vote
 
 npm install --save bootstrap
 npm install --save-dev fs-extra concat
-npm run build:elements
+npm run build:element
 
 1. Init Repo (VSCode)
 

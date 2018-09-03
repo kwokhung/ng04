@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Ng04</title>
@@ -7,8 +8,27 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <app-root></app-root>
+  <framework-vote logo="./assets/angular.png" title="Do you like Angular ?"></framework-vote>
+  <h1 id="result" style="text-align: center"> Give your Vote !!!</h1>
+  <script src="framework-vote.js"></script>
+  <script>
+    const vote = document.querySelector('framework-vote');
+    const result = document.querySelector('#result');
+    vote.addEventListener('like', (event) => {
+      console.log('You Liked Angular ...');
+      result.innerHTML = "Up Vote :  " + event.detail;
+      console.log(event);
+    });
+    vote.addEventListener('dislike', (event) => {
+      console.log('You Do not like Angular...');
+      result.innerHTML = "Down Vote:  " + event.detail;
+      console.log(event);
+    });
+  </script>
 </body>
+
 </html>
