@@ -1,6 +1,6 @@
 npm install -g @angular/cli
 
-ng new ng04 --prefix custom
+ng new ng04
 ng serve
 ng serve --port=4201
 ng build
@@ -9,8 +9,9 @@ ng test
 ng e2e
 ng help
 ng add @angular/elements
-ng g component button --inline-style --inline-template -v Native
+ng generate component framework-vote
 
+npm install --save bootstrap
 npm install --save-dev http-server
 npm run build && npm run package
 npm run serve
