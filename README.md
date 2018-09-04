@@ -3,6 +3,7 @@ npm install -g @angular/cli
 ng new ng04
 ng add @angular/elements
 ng generate component framework-vote
+ng generate component framework-result
 
 npm install --save bootstrap
 npm install --save-dev fs-extra concat

@@ -3,16 +3,19 @@ import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 
 import { FrameworkVoteComponent } from './framework-vote/framework-vote.component';
+import { FrameworkResultComponent } from './framework-result/framework-result.component';
 
 @NgModule({
   declarations: [
-    FrameworkVoteComponent
+    FrameworkVoteComponent,
+    FrameworkResultComponent
   ],
   imports: [
     BrowserModule
   ],
   entryComponents: [
-    FrameworkVoteComponent
+    FrameworkVoteComponent,
+    FrameworkResultComponent
   ]
 })
 export class AppModule {
@@ -22,6 +25,7 @@ export class AppModule {
 
   ngDoBootstrap() {
     customElements.define('framework-vote', createCustomElement(FrameworkVoteComponent, { injector: this.injector }));
+    customElements.define('framework-result', createCustomElement(FrameworkResultComponent, { injector: this.injector }));
   }
   
 }

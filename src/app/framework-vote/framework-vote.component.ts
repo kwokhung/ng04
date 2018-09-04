@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, ElementRef, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-framework-vote',
@@ -12,12 +12,29 @@ export class FrameworkVoteComponent implements OnInit {
   @Output() like = new EventEmitter();
   @Output() dislike = new EventEmitter();
 
+  nativeElement: any;
+
   likeCount = 0;
   dislikeCount = 0;
 
-  constructor() { }
+  constructor(private element: ElementRef) {
+    this.nativeElement = element.nativeElement;
+  }
 
   ngOnInit() {
+    const result = document.querySelector('framework-result');
+
+    this.nativeElement.addEventListener('like', (event) => {
+      console.log('You Liked Angular ...');
+      result.firstElementChild.innerHTML = "Up Vote :  " + event.detail;
+      console.log(event);
+    });
+    
+    this.nativeElement.addEventListener('dislike', (event) => {
+      console.log('You Do not like Angular...');
+      result.firstElementChild.innerHTML = "Down Vote:  " + event.detail;
+      console.log(event);
+    });
   }
 
   vote(type: string) {
